@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-secondary" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && userBooksData" class="row">
+    <div *ngFor="let book of userBooksData" class="col-md-3" style="height: auto; margin-bottom: 2%;">
+      <app-book-item [book]="book" [version]="'readingList'" [expandedCardId]="expandedCardId"
+        (removeBookEvent)="removeBook($event)" (toggleCardExpansion)="toggleCardExpansion($event)"></app-book-item>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && userBooksData.length === 0" class="text-center my-4">
+    <p class="text-muted fs-5 fst-italic">
+      You haven't saved any books to your reading list yet. Start exploring and add your favorites!
+    </p>
+  </div>
+</div>
+
+
+<div *ngIf="!isLoading && !userCollection">
+  <p>Failed to load collection. Try again later.</p>
+</div>

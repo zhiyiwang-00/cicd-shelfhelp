@@ -1,0 +1,49 @@
+.card-body {
+    position: relative;
+}
+
+.additional-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.additional-info.expanded {
+    max-height: 500px;
+}
+
+.blurred-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.card-footer {
+    transition: transform 0.3s ease-out;
+}
+
+.card-footer .bi-chevron-down,
+.card-footer .bi-chevron-up {
+    transition: transform 0.3s ease-out;
+}
+
+.card-footer.collapsed .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+.card-footer.expanded .bi-chevron-up {
+    transform: rotate(180deg);
+}
+
+.bi-star-fill {
+    width: 24px;
+    height: 24px;
+    fill: #d3d3d3;
+    margin-right: 4px;
+}
+
+.bi-star-fill.filled {
+    fill: #ffc107;
+}
